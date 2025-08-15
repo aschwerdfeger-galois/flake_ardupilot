@@ -16,8 +16,9 @@ jobs:
               with:
                 name: galois
             - run: nix build .#sitl_bc
+            - run: mv result/*-ardupilot-sitl-bc-bc/bin ardupilot-bc
             - uses: actions/upload-artifact@v4
               with:
                 if-no-files-found: error
-                path: result/c3pyl35n1ndm15jw39ga1lw3n2gb7l1q-ardupilot-sitl-bc-bc/bin
+                path: ardupilot-bc
                 name: ardupilot-sitl-bitcode
